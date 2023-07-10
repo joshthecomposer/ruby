@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def login
+  end
+
   def get_pokemon_data()
     url = "https://pokeapi.co/api/v2/pokemon/"+rand(1..1000).to_s
     uri = URI(url)

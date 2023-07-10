@@ -7,11 +7,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to(root_path)
+      redirect_to()
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to new_user_path
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private
