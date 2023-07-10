@@ -1,0 +1,27 @@
+<div class="fixed top-0 left-0 w-full">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="bg-red-500 text-red-50 py-2"><%= error %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="flex flex-col w-full md:w-1/2 items-center justify-center m-auto">
+  <%= form_with model: @user, url: users_path, html: {class: "flex flex-col w-full gap-3 rounded shadow p-5"} do |form| %>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+
+    <%= form.submit class: "bg-indigo-500 rounded text-indigo-50 py-2 w-auto" %>
+  <% end %>
+</div>
+
