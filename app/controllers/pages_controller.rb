@@ -7,9 +7,6 @@ class PagesController < ApplicationController
     @pokemon = get_pokemon_data
   end
 
-  def about
-  end
-
   def login
   end
 

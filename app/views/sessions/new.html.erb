@@ -1,8 +1,6 @@
 <div class="fixed top-0 left-0 w-full">
-  <% if @errors %>
-    <% @errors.each do |error| %>
-      <p class="bg-red-500 text-red-50 py-2"><%= error %></p>
-    <% end %>
+  <% if flash[:danger] %>
+      <p class="bg-red-500 text-red-50 py-2"><%= flash[:danger] %></p>
   <% end %>
 </div>
 
