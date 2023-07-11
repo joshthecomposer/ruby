@@ -13,9 +13,16 @@
 
   <body>
     <div class="text-center bg-slate-800  text-2xl py-3 flex gap-3 px-5 text-slate-50">
+      <% if current_user %>
+        <%= link_to "Dashboard", "/users/"+current_user.id.to_s %>
+      <% end %>
       <%= link_to "Home", root_path %>
       <%= link_to "Login", new_session_path %>
       <%= link_to "SignUp", new_user_path %>
+      <% if current_user %>
+              <%= link_to 'Logout',logout_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+      <% end %>
+
     </div>
     <%= yield %>
   </body>
